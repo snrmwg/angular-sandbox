@@ -1,0 +1,8 @@
+<div>
+  <h2>Liste mit ImmutableJS</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      <app-list-item [item]="item" (remove)="removeItem.emit($event)"></app-list-item>
+    </li>
+  </ul>
+</div>

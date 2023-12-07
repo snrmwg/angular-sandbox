@@ -17,7 +17,7 @@ export class TickingComponent implements OnInit, OnChanges, OnDestroy {
   timer = undefined
 
   constructor(readonly cd: ChangeDetectorRef) { }
-  
+
   get GetChangeDetectionCount() {
     return this.changeDetectionCount++
   }
@@ -25,9 +25,9 @@ export class TickingComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.timer = setInterval(() => {
       this.counter2++
-       if (this.counter2 % 5 === 0) {
-         this.cd.detectChanges()
-        }
+      if (this.counter2 % 5 === 0) {
+        this.cd.detectChanges()
+      }
     }, 1000)
 
   }
@@ -36,6 +36,7 @@ export class TickingComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.timer.clearInterval();
+    clearInterval(this.timer);
+    this.timer = undefined;
   }
 }
