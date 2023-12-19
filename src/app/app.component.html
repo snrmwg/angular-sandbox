@@ -1,21 +1,12 @@
 <h1>Angular 6 sandbox</h1>
 
-<app-comp1 [name]="name"></app-comp1>
-<app-button-counter></app-button-counter>
+<nav>
+  <ul>
+    <li><a href="/">Index</a></li>
+    <li><a href="/page1">Page 1</a></li>
+    <li><a href="/http-client">HttpClient Demo</a></li>
+  </ul>
 
-<button (click)="changeName()">Change name</button>
+</nav>
 
-<app-ticking *ngIf="tickingVisible"></app-ticking>
-<p>
-<button (click)="toggleTicking()">toggle ticking visibility</button>
-</p>
-
-<app-list [items]="list1" (removeItem)="removeListItem($event)"></app-list>
-<button (click)="addListItem()">add item</button>
-<button (click)="addListItem(0)">add item at top</button>
-<button (click)="updateItem()">update item at top</button>
-
-<app-list-immutable [items]="list1Immutable" (removeItem)="removeListItemImmutable($event)"></app-list-immutable>
-<button (click)="addListItemImmutable()">add item</button>
-<button (click)="addListItemImmutable(0)">add item at top</button>
-<button (click)="updateItemImmutable()">update item at top</button>
+<router-outlet></router-outlet>

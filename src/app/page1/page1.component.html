@@ -1,0 +1,20 @@
+
+<app-comp1 [name]="name"></app-comp1>
+<app-button-counter></app-button-counter>
+
+<button (click)="changeName()">Change name</button>
+
+<app-ticking *ngIf="tickingVisible"></app-ticking>
+<p>
+  <button (click)="toggleTicking()">toggle ticking visibility</button>
+</p>
+
+<app-list [items]="list1" (removeItem)="removeListItem($event)"></app-list>
+<button (click)="addListItem()">add item</button>
+<button (click)="addListItem(0)">add item at top</button>
+<button (click)="updateItem()">update item at top</button>
+
+<app-list-immutable [items]="list1Immutable" (removeItem)="removeListItemImmutable($event)"></app-list-immutable>
+<button (click)="addListItemImmutable()">add item</button>
+<button (click)="addListItemImmutable(0)">add item at top</button>
+<button (click)="updateItemImmutable()">update item at top</button>
