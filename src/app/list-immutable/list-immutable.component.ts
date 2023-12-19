@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from "@angular/core";
 import { ListItemData } from "../domain";
 import { List } from "immutable";
 
@@ -6,7 +6,7 @@ import { List } from "immutable";
   selector: 'app-list-immutable',
   templateUrl: './list-immutable.component.html',
   styleUrls: [],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListImmutableComponent {
 

@@ -16,3 +16,6 @@
 <button (click)="updateItem()">update item at top</button>
 
 <app-list-immutable [items]="list1Immutable" (removeItem)="removeListItemImmutable($event)"></app-list-immutable>
+<button (click)="addListItemImmutable()">add item</button>
+<button (click)="addListItemImmutable(0)">add item at top</button>
+<button (click)="updateItemImmutable()">update item at top</button>

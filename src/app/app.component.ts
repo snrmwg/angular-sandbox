@@ -32,7 +32,7 @@ export class AppComponent {
 
   addListItem(idx?: number) {
     const newItem = { name: 'x' + this.nextListId++, someValue: 0 };
-    if (typeof idx === 'number') {
+    if (idx === 0) {
       this.list1.splice(idx, 0, newItem)
     } else {
       this.list1.push(newItem)
@@ -49,9 +49,26 @@ export class AppComponent {
     }
   }
 
+  addListItemImmutable(idx?: number) {
+    const newItem = { name: 'x' + this.nextListId++, someValue: 0 };
+    if (idx === 0) {
+      this.list1Immutable = this.list1Immutable.unshift(newItem)
+    } else {
+      this.list1Immutable = this.list1Immutable.push(newItem)
+    }
+  }
 
   removeListItemImmutable(removedItem: any) {
     this.list1Immutable = this.list1Immutable.filter(item => item !== removedItem).toList();
+  }
+
+  updateItemImmutable() {
+    if (!this.list1Immutable.isEmpty()) {
+      this.list1Immutable = this.list1Immutable
+        .updateIn([0], (value: ListItemData) => {
+          return Object.assign({}, value, { someValue: value.someValue + 1 });
+        })
+    }
   }
 
 }
