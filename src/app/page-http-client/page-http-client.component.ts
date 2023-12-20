@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BusinessService } from '../business.service';
 
 @Component({
@@ -6,17 +6,13 @@ import { BusinessService } from '../business.service';
   templateUrl: './page-http-client.component.html',
   styleUrls: ['./page-http-client.component.css']
 })
-export class PageHttpClientComponent implements OnInit {
+export class PageHttpClientComponent {
 
   readonly state$ = this.business.state$
 
   constructor(private business: BusinessService) { }
 
-  ngOnInit() {
-  }
-
   update(options: { fail: boolean; } = { fail: false }) {
-    console.log('update', options)
     this.business.update(options);
   }
 

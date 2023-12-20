@@ -2,11 +2,16 @@
 
 <nav>
   <ul>
-    <li><a href="/">Index</a></li>
-    <li><a href="/page1">Page 1</a></li>
-    <li><a href="/http-client">HttpClient Demo</a></li>
+    <li><a routerLink="/">Index</a></li>
+    <li><a routerLink="/page1">Page 1</a></li>
+    <li><a routerLink="/http-client">HttpClient Demo</a></li>
+    <li><a routerLink="/http-client-auto">HttpClient auto. Demo</a></li>
   </ul>
 
 </nav>
 
 <router-outlet></router-outlet>
+
+<hr>
+
+<p>BusinessService Config: {{JSON.stringify(business.config)}}</p>

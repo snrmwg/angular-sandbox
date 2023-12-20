@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -12,12 +12,8 @@ import { ListItemComponent } from './list-item/list-item.component';
 import { ListImmutableComponent } from './list-immutable/list-immutable.component';
 import { Page1Component } from './page1/page1.component';
 import { PageHttpClientComponent } from './page-http-client/page-http-client.component';
-
-const routes: Routes = [
-  { path: 'page1', component: Page1Component },
-  { path: 'http-client', component: PageHttpClientComponent },
-  // add more routes here
-];
+import { PageHttpClientAutoComponent } from './page-http-client-auto/page-http-client-auto.component';
+import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -29,7 +25,8 @@ const routes: Routes = [
     ListItemComponent,
     ListImmutableComponent,
     Page1Component,
-    PageHttpClientComponent
+    PageHttpClientComponent,
+    PageHttpClientAutoComponent,
   ],
   imports: [
     BrowserModule,
